@@ -26,21 +26,15 @@ async function addBonus(config, actor) {
   }
 }
 
-Hooks.on('dnd5e.preRollFormula', (...args) => {
-  console.log('attack',args)
-});
-
 Hooks.on('dnd5e.preRollAttack', (config) => {
   addBonus(config, config.subject.actor)
 });
 
 Hooks.on('dnd5e.preRollAbilityCheck', (config) => {
-  console.log(config);
   addBonus(config, config.subject);
 });
 
 Hooks.on('dnd5e.preRollSavingThrow', (config) => {
-  console.log(config);
   addBonus(config, config.subject);
 });
 
